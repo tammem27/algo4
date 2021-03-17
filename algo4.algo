@@ -1,0 +1,23 @@
+PROCEDURE swap(VAR x,y :INTEGER)
+VAR
+    temp:INTEGER;
+BEGIN
+    temp:x;
+    x:=y;
+    y:=temp;
+END
+
+ALGORITHM sortInsertion
+VAR
+    arr : ARRAY_OF INTEGER;
+    i,j,n:INTEGER;
+BEGIN
+    n:=arr.length-1;
+    FOR i FROM 0 TO  STEP n  DO
+        j:=i
+        WHILE (j>0 AND arr[j-1]>arr[j]) DO
+            swap(arr[j-1],arr[j])
+            j:=j-1;
+        END_WHILE
+    END_FOR
+END
